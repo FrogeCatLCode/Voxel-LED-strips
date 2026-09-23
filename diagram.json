@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Rider Jakesen",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led-strip",
+      "id": "strip1",
+      "top": -163.7,
+      "left": -373.6,
+      "rotate": 270,
+      "attrs": { "pixels": "60", "pixelSize": "2020" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "strip1:VDD", "esp:5V", "green", [ "v0" ] ],
+    [ "strip1:VSS", "esp:GND.1", "green", [ "v0" ] ],
+    [ "strip1:DIN", "esp:4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
